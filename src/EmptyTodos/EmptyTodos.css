@@ -1,0 +1,42 @@
+.EmptyTodos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.EmptyTodos p{
+    width: 100%;
+    text-align: center;
+}
+
+.EmptyTodos img{
+    height: auto;
+    width: 50%;
+    padding: 15px;
+}
+
+.createButton{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.createButton img {
+    padding: 0;
+    height: auto;
+    width: 60px;
+}
+
+.createButton p {
+    text-align: end;
+    padding-right: 10px;
+}
+
+.createButton .primerTodoText{
+    text-align: initial; 
+    padding-left: 10px;
+}
+

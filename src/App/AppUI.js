@@ -9,6 +9,12 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { TodoHeader } from "../TodoHeader";
 import { Modal } from "../Modal";
 
+/*Creando mis componentes de error, loading y crear*/
+
+import { TodosError } from '../TodosError';
+import { EmptyTodos } from '../EmptyTodos';
+import { TodosLoading } from '../TodosLoading';
+
 
 //Podemos tener un envolvimiento de propos con reactcontext
 
@@ -54,13 +60,13 @@ function AppUI() {
       <TodoList>
         {
           //Controlamos de esta manera si hay un estado de error etc
-          error && <p>Desesperate, hubo un error...</p>
+          error && <TodosError error={error}/>
         }
-        {loading && <p>Estamos cargando, no desesperes...</p>}
+        {loading && <TodosLoading/>}
 
         {
           //Esto se comprende como el manejo de efectos dependeiendo del numero total se desprende un texto etc
-          !loading && !searchedTodos.length && <p>Crea tu primer todo</p>
+          (!loading && !searchedTodos.length) && <EmptyTodos/>
         }
 
         {searchedTodos.map((todo) => (
